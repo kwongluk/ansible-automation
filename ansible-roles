@@ -1,0 +1,5 @@
+ansible-galaxy init /home/devops/ansible/roles/apache
+
+vi /home/devops/ansible/roles/apache/templates/template.j2
+
+
