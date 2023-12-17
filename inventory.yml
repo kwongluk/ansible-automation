@@ -1,0 +1,8 @@
+[prod]
+servera
+
+[dev]
+serverb
+
+[webserver:children]
+prod
