@@ -1,1 +1,11 @@
+sudo dnf install ansible-navigator
+ansible-navigator --version
+podman login registry.redhat.io
+podman login utility.lab.example.com  (Exam)
+podman pull registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8:latest
+ansible-navigator images
+sudo dnf install ansible-core
+yum install platform-python (For Red Hat Enterprise Linux 8)
+yum install python3-libselinux
+yum install python3-dnf
 
