@@ -4,10 +4,21 @@ dnf install rhel-system-roles
 Installation from Automation Hub
 ansible-galaxy collection install redhat.rhel_system_roles -p collections
 
-
 ansible-galaxy collection install  https://github.com/ansible-collections/ansible.posix.git -p collections
 ansible-galaxy collection install  https://github.com/ansible-collections/community.general.git -p collections
 ls collections/ansible_collections (verify)
 ansible-navigator collections (verify)
 
+#cat requirement.yml
+
+---
+collections:
+    - name: community.general
+      source: https://github.com/ansible-collections/community.general
+      type: git
+    - name: ansible.posix
+      source: https://github.com/ansible-collections/ansible.posix
+      type: git
+
+# ansible-galaxy collection  install -r requirement.yml -p /home/devops/ansible/collections
 
