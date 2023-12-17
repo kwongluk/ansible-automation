@@ -1,0 +1,28 @@
+inventory file
+--------------
+[usa]
+washington1.example.com
+washington2.example.com
+
+[canada]
+ontario01.example.com
+ontario02.example.com
+
+[north-america:children]
+canada
+usa
+
+ansible-navigator inventory -m stdout --host washington1.example.com
+ansible-navigator inventory -m stdout --list
+ansible-navigator inventory -m stdout --graph canada
+ansible-navigator inventory
+ansible-navigator inventory -i inventory -m stdout --list
+ansible-navigator inventory -i inventory -m stdout --graph ungrouped
+ansible-navigator inventory -i inventory -m stdout --graph development
+ansible-navigator inventory -i inventory
+
+
+
+
+
+
