@@ -1,0 +1,73 @@
+https://github.com/kwongluk/ansible-automation.git
+subscription-manager list --available --all | grep "Ansible Automation Platform" -B 3 -A 6
+subscription-manager attach --pool=<pool_id>
+subscription-manager list --consumed
+subscription-manager repos --enable ansible-automation-platform-2.2-for-rhel-8-x86_64-rpms
+subscription-manager repos --enable ansible-automation-platform-2.2-for-rhel-9-x86_64-rpms
+
+
+Tarball install
+---------------
+Navigate to https://access.redhat.com/downloads/content/480
+Click Download Now for the Ansible Automation Platform <latest-version> Setup.
+Extract the files:
+$ tar xvzf ansible-automation-platform-setup-<latest-version>.tar.gz
+
+RPM install
+-----------
+When you use the RPM installer, the files are placed under the /opt/ansible-automation-platform/installer directory.
+sudo dnf install --enablerepo=ansible-automation-platform-2.2-for-rhel-8-x86_64-rpms ansible-automation-platform-installer
+sudo dnf install --enablerepo=ansible-automation-platform-2.2-for-rhel-9-x86_64-rpms ansible-automation-platform-installer
+
+Installing without internet access
+----------------------------------
+tar xvzf ansible-automation-platform-setup-bundle-<latest-version>.tar.gz
+
+
+inventory file
+--------------
+ansible all -i <path-to-inventory-file. --list-hosts
+[automationcontroller]
+host1.example.com
+host2.example.com
+Host4.example.com
+
+[automationhub]
+host3.example.com
+
+[database]
+Host5.example.com
+
+[all:vars]
+admin_password='<password>'
+
+pg_host=''
+pg_port=''
+
+pg_database='awx'
+pg_username='awx'
+pg_password='<password>'
+
+registry_url='registry.redhat.io'
+registry_username='<registry username>'
+registry_password='<registry password>'
+
+
+cat credentials.yml
+admin_password: my_long_admin_pw
+pg_password: my_long_pg_pw
+registry_password: my_long_registry_pw
+
+ansible-vault encrypt credentials.yml
+New Vault password:
+Confirm New Vault password:
+Encryption successful
+
+
+
+
+
+
+
+
+
