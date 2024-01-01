@@ -1,5 +1,7 @@
 https://console.redhat.com/ansible/automation-hub/
 https://console.redhat.com/ansible/automation-hub/repo/published/redhat/rhel_system_roles/
+ansible-galaxy collection install redhat.rhel_system_roles
+dnf install rhel-system-roles
 
 
 
