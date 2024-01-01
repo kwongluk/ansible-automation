@@ -1,3 +1,8 @@
+https://console.redhat.com/ansible/automation-hub/
+https://console.redhat.com/ansible/automation-hub/repo/published/redhat/rhel_system_roles/
+
+
+
 Installation via RPM
 dnf install rhel-system-roles
 
