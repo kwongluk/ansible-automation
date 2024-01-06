@@ -1,0 +1,11 @@
+- name: /etc/hosts is up-to-date
+  hosts: datacenter-west
+  remote_user: automation
+  become: true
+
+  tasks:
+    - name: server.example.com in /etc/hosts
+      ansible.builtin.lineinfile:
+        path: /etc/hosts
+        line: '1.1.1.1 server.example.com server'
+        state: present
