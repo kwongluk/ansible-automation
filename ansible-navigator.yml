@@ -1,4 +1,11 @@
 ansible-navigator:
+  playbook-artifact:
+    enable: false
+
+
+
+
+ansible-navigator:
   execution-environment: 
     image: utility.lab.example.com/ee-supported-rhel8:latest 
     image: registry.redhat.io/ansible-automation-platform-24/ee-supported-rhed8:latest
